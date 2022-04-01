@@ -1,0 +1,11 @@
+from geopy.geocoders import Nominatim
+
+
+loc = Nominatim(user_agent="GetLoc")
+
+enter_loc=input("Enter Your Location")
+getLoc = loc.geocode(enter_loc)
+
+print(getLoc.address)
+print("Latitude = ", getLoc.latitude,"Longitude = ", getLoc.longitude)
+
