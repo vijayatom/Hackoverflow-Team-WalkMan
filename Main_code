@@ -9,3 +9,4 @@ getLoc = loc.geocode(enter_loc)
 print(getLoc.address)
 print("Latitude = ", getLoc.latitude,"Longitude = ", getLoc.longitude)
 
+asdf
