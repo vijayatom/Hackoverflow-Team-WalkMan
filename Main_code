@@ -1,12 +1,39 @@
+import streamlit as st
 from geopy.geocoders import Nominatim
-import twilio
+from PIL import Image
 
-loc = Nominatim(user_agent="GetLoc")
+st.title("WalkMan")
+from_address = st.text_area("To Address : ")
 
-enter_loc=input("Enter Your Location")
-getLoc = loc.geocode(enter_loc)
+button = st.button("Store!")
 
-print(getLoc.address)
-print("Latitude = ", getLoc.latitude,"Longitude = ", getLoc.longitude)
+
+if button:
+    loc = Nominatim(user_agent="GetLoc")
+
+# entering the location name
+    getLoc = loc.geocode(from_address)
+
+    #togetloc =loc.geocode(to_address)
+
+# printing address
+    #print(getLoc.address)
+
+    #print(togetloc.address)
+
+# printing latitude and longitude
+    print("Latitude,","Longitude = ",getLoc.latitude, getLoc.longitude)
+   
+
+#print("Longitude = ", getLoc.longitude)
+    #st.write(getLoc.address)
+    st.write(getLoc.latitude, getLoc.longitude)
+    st.write("https://www.google.com/maps/@13.0084895,80.00352399100981")
+
+    #st.write(togetloc.address)
+    #t.write(togetloc.latitude, togetloc.longitude)
+    image = Image.open(r'C:\Users\HARI\Desktop\HackerOverFlow\qr-code.png')
+
+    st.image(image, caption='QR Code', width=200)
 
 
