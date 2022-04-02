@@ -35,7 +35,7 @@ try:
                 st.write('\n',data[a][e],end=' ')
             else:
                 st.write('\n',data[i][e],end=' ')
-except(KeyError):
+except(KeyError,ValueError):
    st.write("Invalid address")
 
 button=st.button("Search")
